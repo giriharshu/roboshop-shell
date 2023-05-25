@@ -10,6 +10,7 @@ curl -o /tmp/frontend.zip https://roboshop-artifacts.s3.amazonaws.com/frontend.z
 cd /usr/share/nginx/html
 unzip /tmp/frontend.zip
 
-## Some files to be created
+## Some config files to be create
+cp roboshop.conf /etc/nginx/default.d/roboshop.conf
 
 systemctl restart nginx
