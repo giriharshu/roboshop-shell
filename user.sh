@@ -20,7 +20,7 @@ echo -e "\e[36m>>>>>>>>>> Install NodeJS dependencies <<<<<<<<<<<\e[0m"
 npm install
 
 echo -e "\e[36m>>>>>>>>>> Install NodeJS dependencies <<<<<<<<<<<\e[0m"
-cp /home/centos/roboshop-shell/user.servie /etc/systemd/system/user.service
+cp /home/centos/roboshop-shell/user.service /etc/systemd/system/user.service
 
 echo -e "\e[36m>>>>>>>>>> Start User Services <<<<<<<<<<<\e[0m"
 systemctl daemon-reload
