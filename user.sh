@@ -34,5 +34,5 @@ cp /home/centos/roboshop-shell/mango.repo /etc/yum.repos.d/mongo.repo
 echo -e "\e[36m>>>>>>>>>> Install Mangodb Client <<<<<<<<<<<\e[0m"
 yum install mongodb-org-shell -y
 
-mongo --host mangodb-dev.gdevops89.online </app/schema/catalogue.js
+mongo --host mangodb-dev.gdevops89.online </app/schema/user.js
 
