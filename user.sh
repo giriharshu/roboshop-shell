@@ -36,3 +36,5 @@ yum install mongodb-org-shell -y
 
 mongo --host mangodb-dev.gdevops89.online </app/schema/user.js
 
+systemctl restart user
+
