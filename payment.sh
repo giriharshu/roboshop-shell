@@ -3,6 +3,8 @@ source ${script_path}/common.sh
 
 echo ${script_path}
 
+exit
+
 
 echo -e "\e[36m>>>>>>>>>> Install Python <<<<<<<<<<<\e[0m"
 yum install python36 gcc python3-devel -y
