@@ -1,3 +1,8 @@
+script_path=$(dirname $0)
+source ${script_path}/common.sh
+
+dirname $0
+
 echo -e "\e[36m>>>>>>>>>>Configuring NodeJS repos <<<<<<<<<<<\e[0m"
 curl -sL https://rpm.nodesource.com/setup_lts.x | bash
 
@@ -20,7 +25,7 @@ echo -e "\e[36m>>>>>>>>>> Install NodeJS dependencies <<<<<<<<<<<\e[0m"
 npm install
 
 echo -e "\e[36m>>>>>>>>>> Install NodeJS dependencies <<<<<<<<<<<\e[0m"
-cp /home/centos/roboshop-shell/user.service /etc/systemd/system/user.service
+cp ${script_path}/user.service /etc/systemd/system/user.service
 
 echo -e "\e[36m>>>>>>>>>> Start User Services <<<<<<<<<<<\e[0m"
 systemctl daemon-reload
@@ -29,7 +34,7 @@ systemctl enable user
 systemctl start user
 
 echo -e "\e[36m>>>>>>>>>> Copy Mangodb repo <<<<<<<<<<<\e[0m"
-cp /home/centos/roboshop-shell/mango.repo /etc/yum.repos.d/mongo.repo
+cp ${script_path}/mango.repo /etc/yum.repos.d/mongo.repo
 
 echo -e "\e[36m>>>>>>>>>> Install Mangodb Client <<<<<<<<<<<\e[0m"
 yum install mongodb-org-shell -y

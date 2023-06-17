@@ -1,3 +1,8 @@
+script_path=$(dirname $0)
+source ${script_path}/common.sh
+
+dirname $0
+
 echo -e "\e[36m>>>>>>>>>> Install Golang <<<<<<<<<<<\e[0m"
 yum install golang -y
 
@@ -19,7 +24,7 @@ go get
 go build
 
 echo -e "\e[36m>>>>>>>>>> Copy Dispatch Systemd file <<<<<<<<<<<\e[0m"
-cp /home/centos/roboshop-shell/dispatch.service /etc/systemd/system/dispatch.service
+cp ${script_path}/dispatch.service /etc/systemd/system/dispatch.service
 
 echo -e "\e[36m>>>>>>>>>> Start Dispatch Services <<<<<<<<<<<\e[0m"
 systemctl daemon-reload
