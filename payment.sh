@@ -1,7 +1,7 @@
 script_path=$(dirname $0)
 source ${script_path}/common.sh
 
-dirname $0
+echo ${script_path}
 
 
 echo -e "\e[36m>>>>>>>>>> Install Python <<<<<<<<<<<\e[0m"
