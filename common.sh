@@ -1,1 +1,1 @@
-user_app = roboshop
+app_user = roboshop
