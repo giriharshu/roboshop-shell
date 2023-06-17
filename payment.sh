@@ -1,4 +1,4 @@
-script_path=$(cd 'dirname $0')
+script_path=$(cd 'dirname $0' && pwd)
 source ${script_path}/common.sh
 
 echo ${script_path}
