@@ -1,6 +1,7 @@
 if [ -z "$mysql_root_password" ]
 then
   echo input mysql root password missing
+  exit
 fi
 
 yum module disable mysql -y

@@ -10,6 +10,7 @@ rabbitmq_appuser_password=$1
 if [ -z "$rabbitmq_appuser_password" ]
 then
   echo input rabbitmq appuser password missing
+  exit
 fi
 
 echo -e "\e[36m>>>>>>>>>> Accept Password Input <<<<<<<<<<<\e[0m"
