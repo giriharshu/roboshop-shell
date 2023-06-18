@@ -26,7 +26,7 @@ function_nodejs() {
   print_head "Install NodeJS dependencies"
   npm install
 
-  print_head "Copy Cart Systemd file"
+  print_head "Copy ${component} Systemd file"
   cp ${script_path}/cart.service /etc/systemd/system/${component}.service
 
   systemctl daemon-reload
