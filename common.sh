@@ -13,6 +13,8 @@ schema_setup(){
    print_head "Install Mangodb Client"
    yum install mongodb-org-shell -y
 
+   print_head " Load Schema"
+
    mongo --host mangodb-dev.gdevops89.online </app/schema/${component}.js
 
    systemctl restart ${component}
