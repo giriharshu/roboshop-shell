@@ -27,7 +27,7 @@ function_nodejs() {
   npm install
 
   print_head "Copy ${component} Systemd file"
-  cp ${script_path}/cart.service /etc/systemd/system/${component}.service
+  cp ${script_path}/${component}.service /etc/systemd/system/${component}.service
 
   systemctl daemon-reload
   systemctl enable ${component}
