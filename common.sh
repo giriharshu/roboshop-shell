@@ -1,6 +1,6 @@
 app_user=roboshop
 
-print_heade(){
+print_head(){
   echo -e "\e[35m>>>>>>>>>> $1 <<<<<<<<<<<\e[0m"
 }
 
