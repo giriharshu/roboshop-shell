@@ -1,32 +1,35 @@
 app_user=roboshop
 
+print_heade(){
+  echo -e "\e[35m>>>>>>>>>> $1 <<<<<<<<<<<\e[0m"
+}
+
 function_nodejs() {
-  echo -e "\e[36m>>>>>>>>>>Configuring NodeJS repos <<<<<<<<<<<\e[0m"
+  print_head "Configuring NodeJS repos"
   curl -sL https://rpm.nodesource.com/setup_lts.x | bash
 
-  echo -e "\e[36m>>>>>>>>>>Install NodeJS <<<<<<<<<<<\e[0m"
+  print_head "Install NodeJS"
   yum install nodejs -y
 
-  echo -e "\e[36m>>>>>>>>>>Add User <<<<<<<<<<<\e[0m"
+  print_head "Add User"
   useradd roboshop
 
-  echo -e "\e[36m>>>>>>>>>>Add a Directory <<<<<<<<<<<\e[0m"
+  print_head "Add a Directory"
   rm -rf /app
   mkdir /app
 
-  echo -e "\e[36m>>>>>>>>>> Unzip App Contents <<<<<<<<<<<\e[0m"
+  print_head "Unzip App Contents"
   curl -L -o /tmp/${component}.zip https://roboshop-artifacts.s3.amazonaws.com/${component}.zip
   cd /app
   unzip /tmp/${component}.zip
 
-  echo -e "\e[36m>>>>>>>>>> Install NodeJS dependencies <<<<<<<<<<<\e[0m"
+  print_head "Install NodeJS dependencies"
   npm install
 
-  echo -e "\e[36m>>>>>>>>>> Copy Cart Systemd file <<<<<<<<<<<\e[0m"
+  print_head "Copy Cart Systemd file"
   cp ${script_path}/cart.service /etc/systemd/system/${component}.service
 
   systemctl daemon-reload
-
   systemctl enable ${component}
   systemctl start ${component}
 }
