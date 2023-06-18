@@ -1,5 +1,10 @@
 rabbitmq_appuser_password=$1
 
+if [ -z "$rabbitmq_appuser_password" ]
+then
+  echo input rabbitmq appuser password missing
+fi
+
 echo -e "\e[36m>>>>>>>>>>Configure YUM Repos from the script provided by vendor <<<<<<<<<<<\e[0m"
 curl -s https://packagecloud.io/install/repositories/rabbitmq/erlang/script.rpm.sh | bash
 

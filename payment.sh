@@ -7,6 +7,11 @@ source ${script_path}/common.sh
 
 rabbitmq_appuser_password=$1
 
+if [ -z "$rabbitmq_appuser_password" ]
+then
+  echo input rabbitmq appuser password missing
+fi
+
 echo -e "\e[36m>>>>>>>>>> Accept Password Input <<<<<<<<<<<\e[0m"
 sed -i -e "s|rabbitmq_appuser_password|${rabbitmq_appuser_password}|" ${script_path}/payment.service
 
