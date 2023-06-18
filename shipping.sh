@@ -4,6 +4,7 @@ echo ${script}
 
 script_path=$(dirname "$script")
 source ${script_path}/common.sh
+mysql_root_password=$1
 
 dirname $0
 
@@ -39,6 +40,6 @@ echo -e "\e[36m>>>>>>>>>> Install Mysql <<<<<<<<<<<\e[0m"
 yum install mysql -y
 
 echo -e "\e[36m>>>>>>>>>> Load the Schema <<<<<<<<<<<\e[0m"
-mysql -h mysql-dev.gdevops89.online -uroot -pRoboShop@1 < /app/schema/shipping.sql
+mysql -h mysql-dev.gdevops89.online -uroot -p${mysql_root_password} < /app/schema/shipping.sql
 
 systemctl restart shipping
