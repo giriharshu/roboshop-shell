@@ -7,10 +7,10 @@ print_head(){
 schema_setup(){
   if [ "$schema_setup" == "mongo" ]
   then
-   print_head Copy Mangodb repo
+   print_head "Copy Mangodb repo"
    cp ${script_path}/mango.repo /etc/yum.repos.d/mongo.repo
 
-   print_head Install Mangodb Client
+   print_head "Install Mangodb Client"
    yum install mongodb-org-shell -y
 
    mongo --host mangodb-dev.gdevops89.online </app/schema/${component}.js
