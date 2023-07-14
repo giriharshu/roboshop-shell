@@ -4,13 +4,15 @@ function_print_head(){
   echo -e "\e[35m>>>>>>>>>> $1 <<<<<<<<<<<\e[0m"
 }
 
-function_stat_check(){
-  if [ $1 -eq 0 ]; then
+function_stat_check()
+{
+  if [ $1 -eq 0 ]
+  then
       echo  -e "\e[35mSUCCESS\e[0m"
     else
       echo -e "\e[32mFAILUR\e[0m"
       exit 1
-    fi
+  fi
 }
 
 function_schema_setup(){
