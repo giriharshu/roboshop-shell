@@ -36,13 +36,16 @@ function_schema_setup(){
 
    if [ "$schema_setup" == "mysql" ]
    then
-     function_print_head "Load the Schema"
-       mysql -h mysql-dev.gdevops89.online -uroot -p${mysql_root_password} < /app/schema/${component}.sql
-       function_stat_check $?
 
-       function_print_head "Install Mysql"
-       yum install mysql -y
-       function_stat_check $?
+     function_print_head "Install Mysql"
+     yum install mysql -y
+     function_stat_check $?
+
+     function_print_head "Load the Schema"
+     mysql -h mysql-dev.gdevops89.online -uroot -p${mysql_root_password} < /app/schema/${component}.sql
+     function_stat_check $?
+
+
    fi
 }
 
