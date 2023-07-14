@@ -39,7 +39,7 @@ function_app_prereq()
     rm -rf /app
     mkdir /app
 
-    function_print_head "Unzip App Contents" <<<<<<<<<<<\e[0m""
+    function_print_head "Unzip App Contents"
     curl -L -o /tmp/${component}.zip https://roboshop-artifacts.s3.amazonaws.com/${component}.zip
     cd /app
     unzip /tmp/${component}.zip
