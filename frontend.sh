@@ -1,3 +1,7 @@
+script=$(realpath "$0")
+echo ${script}
+script_path=$(dirname "$script")
+source ${script_path}/common.sh
 
 function_print_head "Install Nginx"
 yum install nginx -y &>>$log_file
