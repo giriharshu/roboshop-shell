@@ -15,7 +15,8 @@ function_stat_check()
   fi
 }
 
-function_schema_setup(){
+function_schema_setup()
+{
   if [ "$schema_setup" == "mongo" ]
   then
    function_print_head "Copy Mangodb repo"
@@ -101,8 +102,8 @@ function_nodejs()
 
 }
 
-function_java()
-{
+function_java(){
+
   function_print_head "Install Maven"
   yum install maven -y
   function_stat_check $?
