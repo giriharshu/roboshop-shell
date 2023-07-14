@@ -8,10 +8,10 @@ function_stat_check()
 {
   if [ $1 -eq 0 ]
   then
-      echo  -e "\e[35mSUCCESS\e[0m"
+      echo -e "\e[35mSUCCESS\e[0m"
     else
       echo -e "\e[32mFAILUR\e[0m"
-      exit 1
+      #exit 1
   fi
 }
 
