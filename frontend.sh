@@ -25,7 +25,7 @@ function_stat_check $?
 
 ## Some config files to be create
 function_print_head "Start nginx"
-systemctl enable nginx $log_file
-systemctl start nginx $log_file
-systemctl restart nginx $log_file
+systemctl enable nginx &>>$log_file
+systemctl start nginx &>>$log_file
+systemctl restart nginx &>>$log_file
 function_stat_check $?
