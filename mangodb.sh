@@ -1,3 +1,6 @@
+script=$(realpath "$0")
+script_path=$(dirname "$script")
+source ${script_path}/common.sh
 
 function_print_head "Setup mango repo"
 cp mango.repo /etc/yum.repos.d/mongo.repo >>$log_file
