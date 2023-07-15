@@ -32,7 +32,7 @@ function_schema_setup()
    function_stat_check $?
 
    function_print_head " Load Schema"
-   mongo --host mangodb-dev.gdevops89.online </app/schema/${component}.js
+   mongo --host mangodb-dev.gdevops89.online </app/schema/${component}.js &>>$log_file
    function_stat_check $?
 
    systemctl restart ${component} &>>$log_file
